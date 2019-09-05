@@ -30,6 +30,7 @@ introduction to plotting.
 * [Data visualization with `ggplot2`](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)
 
 
+
 ## Code handout
 
 There is "[code handout](code-handout.R)" (`code-handout.R`) that is intended to
