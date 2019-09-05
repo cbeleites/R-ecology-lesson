@@ -517,7 +517,7 @@ Here we examine the fourth rule: Each type of observational unit forms a table.
 In `surveys`, the rows of `surveys` contain the values of variables associated
 with each record (the unit), values such as the weight or sex of each animal 
 associated with each record. What if instead of comparing records, we 
-wanted to compare the different mean weight of each genus between plots? (Ignoring `plot_type` for simplicity).
+wanted to compare the different mean weights of each genus between plots? (Ignoring `plot_type` for simplicity).
 
 We'd need to create a new table where each row (the unit) is comprised of values of variables associated with each plot. In practical terms this means the values
 in `genus` would become the names of column variables and the cells would contain the values of the mean weight observed on each plot.
@@ -545,7 +545,7 @@ and `gather()`.
 Further arguments include `fill` which, if set, fills in missing values with 
 the value provided.
 
-Let's use `spread()` to transform surveys to find the mean weight of each 
+Let's use `spread()` to transform `surveys` to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
 `group_by()` and `summarise()` to filter our observations and variables of 
 interest, and create a new variable for the `mean_weight`.
