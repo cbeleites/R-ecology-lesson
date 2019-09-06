@@ -12,7 +12,6 @@
 # RStudio files
 .Rproj.user/
 .Rproj.user
-*.Rproj
 
 # vim backup files
 *.swp
@@ -21,6 +20,9 @@ data*/
 portal-database.sqlite
 .secret/
 _site/
+site_libs/
+img/
+0*.html
 
 # output from linkchecker
 link_res.csv
