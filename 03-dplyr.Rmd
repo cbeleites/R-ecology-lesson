@@ -67,8 +67,8 @@ Then, to load the package type:
 
 
 ```{r, message = FALSE, purl = FALSE}
-## load the tidyverse packages, incl. dplyr
-library(tidyverse)
+## load packages,
+library(tidyverse) # incl. dplyr
 ```
 
 ## What are **`dplyr`** and **`tidyr`**?
@@ -107,25 +107,16 @@ option to specify the data type for a column manually by using the `col_types` a
 
 ```{r, results = 'hide', purl = FALSE}
 ## inspect the data
-str(surveys)
+library(skimr)
+skim(surveys)
 ```
 
-```{r, eval=FALSE, purl=FALSE}
-## preview the data
-View(surveys)
-```
+This provides an overview of all columns/variables grouped by data type/class:
+`character` and `numeric`. In contrast to going into RStudio's `Environment`
+pane, and clicking the round `>` button left of the `Data` object you want to
+inspect, `skim()` also shows some basic statistics for each column.
 
-Notice that the class of the data is now `tbl_df`
-
-This is referred to as a "tibble". Tibbles tweak some of the behaviors of the data frame objects we introduced in the previous episode. The data structure is very similar to a data frame. For our purposes the only differences are that:
-
-1. In addition to displaying the data type of each column under its name, it
-   only prints the first few rows of data and only as many columns as fit on one
-   screen.
-2. Columns of class `character` are never converted into factors.
-
-
-We're going to learn some of the most common **`dplyr`** functions:
+Using those columns, we're going to learn some common **`dplyr`** functions:
 
 - `select()`: subset columns
 - `filter()`: subset rows on conditions
@@ -560,7 +551,7 @@ surveys_gw <- surveys %>%
   group_by(plot_id, genus) %>%
   summarize(mean_weight = mean(weight))
 
-str(surveys_gw)
+head(surveys_gw, n = 10)
 ```
 
 This yields `surveys_gw` where the observations for each plot are spread across
@@ -572,7 +563,7 @@ Using `spread()` to key on `genus` with values from `mean_weight` this becomes
 surveys_spread <- surveys_gw %>%
   spread(key = genus, value = mean_weight)
 
-str(surveys_spread)
+head(surveys_spread)
 ```
 
 ![](img/spread_data_R.png)
@@ -609,10 +600,9 @@ To recreate `surveys_gw` from `surveys_spread` we would create a key called
 the key variable. Here we drop `plot_id` column with a minus sign.
 
 ```{r, purl=FALSE}
-surveys_gather <- surveys_spread %>%
-  gather(key = "genus", value = "mean_weight", -plot_id)
-
-str(surveys_gather)
+surveys_spread %>% 
+  gather(key = "genus", value = "mean_weight", -plot_id) %>% 
+  skim()
 ```
 
 ![](img/gather_data_R.png)
