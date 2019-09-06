@@ -13,7 +13,7 @@ RStudio interface, and move through to specific programming tasks, such as
 importing CSV files, the structure of data frame objects in R, dealing with
 categorical variables (i.e. factors), basic data manipulation (adding/removing
 rows and columns), and finishing with calculating summary statistics and a brief
-introduction to plotting. There is also a lesson on how to use databases from R that is intended to be taught after the SQL lesson, and ideally at the end of a Data Carpentry workshop.
+introduction to plotting.
 
 ## Prerequisites
 
@@ -28,7 +28,6 @@ introduction to plotting. There is also a lesson on how to use databases from R 
 * [Starting with data](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html)
 * [Manipulating, analyzing and exporting data with `tidyverse`](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html)
 * [Data visualization with `ggplot2`](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)
-* [SQL databases and R](https://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html)
 
 
 ## Code handout

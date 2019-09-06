@@ -80,17 +80,3 @@ Cheat sheet of functions used in the lessons
   * `grid.arrange()` # combine and arrange multiple ggplots into a single figure
   * `ggsave()` # save a ggplot
   
-## Lesson 5 -- SQL databases and R
-
-  * `dir.create()` # create a directory
-  * `download.file() ` # download files from the internet to your computer
-  * `dbConnect()` # create a connection to a database
-  * `SQLite()` # connect to a SQLite database
-  * `src_dbi()` # connect dplyr to a DBI-compatible database file
-  * `tbl`         # connect to a table within a database
-  * `sql()` # combine character vectors into a single SQL expression 
-  * `show_query()` # show which SQL commands are sent to the database
-  * `collect()`     # retrieve all the results from the database
-  * `inner_join()`  # perform an inner join between two tables
-  * `src_sqlite()` # connect dplyr to a SQLite database file
-  * `copy_to()`     # copy a data frame as a table into a database

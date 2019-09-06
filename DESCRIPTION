@@ -1,2 +1,2 @@
 Package: recologylesson
-Imports: remotes, tidyverse, hunspell, dbplyr, gridExtra, rmarkdown, knitr, RSQLite
+Imports: remotes, tidyverse, hunspell, gridExtra, rmarkdown, knitr

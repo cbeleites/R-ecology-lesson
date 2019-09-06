@@ -119,18 +119,6 @@ The two main goals for this lessons are:
   with the layering system of ggplot2, (2) using the argument `group` in the
   `aes()` function, (3) basic customization of the plots.
 
-### R and SQL
-
-* Ideally this lesson is best taught at the end of the workshop (as a capstone
-  example) to illustrate how the tools covered can integrate with each
-  others. Depending on the audience, and the pace of the workshop, it can be
-  shown as a demonstration rather than a typically lesson.
-* The explanation of how dplyr's verb syntax is translated into SQL statements,
-  and the section on laziness are optional and don't need to be taught in detail
-  during a workshop. They can be useful after a workshop for learners interested
-  in learning more about the topics or for instructors to answer questions from
-  the workshop participants.
-
 
 ## Potential issues & solutions
 

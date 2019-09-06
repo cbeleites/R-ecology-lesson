@@ -18,11 +18,6 @@ if (!file.exists("data_raw/portal_data_joined.csv")) {
                   "data_raw/portal_data_joined.csv")
 }
 
-if (!file.exists("data_raw/portal_mammals.sqlite")) {
-    download.file("https://ndownloader.figshare.com/files/2292171",
-                  "data_raw/portal_mammals.sqlite")
-}
-
 
 ## knitr options
 library(knitr)

@@ -17,7 +17,6 @@
 *.swp
 
 data*/
-portal-database.sqlite
 .secret/
 _site/
 site_libs/
