@@ -3,7 +3,6 @@
 # save yourself some aggrevation, and have everyone check and see if they can
 # install all these packages before you start the first day
 library(gridExtra) # ggplot
-library(hexbin) # ggplot
 library(dbplyr) # R and databases
 library(RSQLite) # R and databases
 library(tidyverse) # lesson 3 onwards
