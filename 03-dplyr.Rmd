@@ -162,29 +162,20 @@ filter(surveys, year == 1995)
 
 ## Pipes
 
-What if you want to select and filter at the same time? There are three
-ways to do this: use intermediate steps, nested functions, or pipes.
+What if you want to select and filter at the same time? There are several
+ways to do this.
 
 With intermediate steps, you create a temporary data frame and use
 that as input to the next function, like this:
 
 ```{r, purl = FALSE}
-surveys2 <- filter(surveys, weight < 5)
-surveys_sml <- select(surveys2, species_id, sex, weight)
+small_animals <- filter(surveys, weight < 5)
+(small_animals <- select(small_animals, species_id, sex, weight))
 ```
 
 This is readable, but can clutter up your workspace with lots of objects that you have to name individually. With multiple steps, that can be hard to keep track of.
 
-You can also nest functions (i.e. one function inside of another), like this:
-
-```{r, purl = FALSE}
-surveys_sml <- select(filter(surveys, weight < 5), species_id, sex, weight)
-```
-
-This is handy, but can be difficult to read if too many functions are nested, as
-R evaluates the expression from the inside out (in this case, filtering, then selecting).
-
-The last option, *pipes*, are a recent addition to R. Pipes let you take
+*Pipes* are a better option. They are a recent addition to R and let you take
 the output of one function and send it directly to the next, which is useful
 when you need to do many things to the same dataset.  Pipes in R look like
 `%>%` and are made available via the **`magrittr`** package, installed automatically
@@ -216,11 +207,11 @@ If we want to create a new object with this smaller version of the data, we
 can assign it a new name:
 
 ```{r, purl = FALSE}
-surveys_sml <- surveys %>%
+small_animals <- surveys %>%
   filter(weight < 5) %>%
   select(species_id, sex, weight)
 
-surveys_sml
+small_animals
 ```
 
 Note that the final data frame is the leftmost part of this expression.
