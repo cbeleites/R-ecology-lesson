@@ -546,7 +546,3 @@ from flat files!
 **Note:** In this example, we first loaded all of the data into the R session by
 reading the three `csv` files. Because all the data has to flow through R,
 this is not suitable for very large datasets.
-
-
-```{r, child="_page_built_on.Rmd"}
-```

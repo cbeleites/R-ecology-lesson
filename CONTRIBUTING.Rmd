@@ -150,7 +150,3 @@ And not this format
     <br/>
     Mail us at [board@datacarpentry.org](mailto:board@datacarpentry.org)
     or come chat with us on [our Gitter chat](https://gitter.im/data-carpentry/Lobby).
-
-
-```{r, child="_page_built_on.Rmd"}
-```

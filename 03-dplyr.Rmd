@@ -793,7 +793,3 @@ write_csv(surveys_complete, path = "data/surveys_complete.csv")
 if (!dir.exists("data")) dir.create("data")
 write_csv(surveys_complete, path = "data/surveys_complete.csv")
 ```
-
-
-```{r, child="_page_built_on.Rmd"}
-```
