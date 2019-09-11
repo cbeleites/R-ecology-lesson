@@ -426,13 +426,14 @@ surveys %>%
 
 With the above code, we can proceed with `arrange()` to sort the table 
 according to a number of criteria so that we have a better comparison. 
-For instance, we might want to arrange the table above in (i) an alphabetical order of 
-the levels of the species and (ii) in descending order of the count:
+For instance, we might want to arrange the table above in two ways:
 
 ```{r purl = FALSE}
 surveys %>%
   count(sex, species) %>%
-  arrange(species, desc(n))
+  arrange(species,  # first by alphabetical order of the levels
+          desc(n)   # then by descending order of the count.
+  )
 ```
 
 From the table above, we may learn that, for instance, there are 75 observations of 
