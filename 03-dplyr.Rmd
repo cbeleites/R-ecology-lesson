@@ -67,8 +67,8 @@ Then, to load the package type:
 
 
 ```{r, message = FALSE, purl = FALSE}
-## load packages,
-library(tidyverse) # incl. dplyr
+## load the tidyverse packages, incl. dplyr
+library(tidyverse)
 ```
 
 ## What are **`dplyr`** and **`tidyr`**?
@@ -105,16 +105,10 @@ guesses the data type for each column as it reads it into R. For example, in thi
 reads `weight` as `col_double` (a numeric data type), and `species` as `col_character`. You have the
 option to specify the data type for a column manually by using the `col_types` argument in `read_csv`.
 
-```{r, results = 'hide', purl = FALSE}
-## inspect the data
-library(skimr)
-skim(surveys)
-```
-
-This provides an overview of all columns/variables grouped by data type/class:
-`character` and `numeric`. In contrast to going into RStudio's `Environment`
-pane, and clicking the round `>` button left of the `Data` object you want to
-inspect, `skim()` also shows some basic statistics for each column.
+In RStudio's `Environment` pane, this `Data` object can now be inspected by
+clicking its name and the round `>` button left of it. The latter provides an
+overview of all columns/variables grouped by data type/class: `character` and
+`numeric`.
 
 Using those columns, we're going to learn some common **`dplyr`** functions:
 
@@ -600,9 +594,10 @@ To recreate `surveys_gw` from `surveys_spread` we would create a key called
 the key variable. Here we drop `plot_id` column with a minus sign.
 
 ```{r, purl=FALSE}
-surveys_spread %>% 
-  gather(key = "genus", value = "mean_weight", -plot_id) %>% 
-  skim()
+surveys_gather <- surveys_spread %>%
+  gather(key = "genus", value = "mean_weight", -plot_id)
+
+str(surveys_gather)
 ```
 
 ![](img/gather_data_R.png)
