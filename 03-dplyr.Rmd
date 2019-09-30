@@ -3,13 +3,9 @@ title: Manipulating, analyzing and exporting data with tidyverse
 author: Data Carpentry contributors
 ---
 
-```{r, echo=FALSE, purl=FALSE, message = FALSE}
+```{r, include=FALSE, purl=FALSE}
 source("setup.R")
-surveys <- read.csv("data_raw/portal_data_joined.csv")
-suppressWarnings(surveys$date <- lubridate::ymd(paste(surveys$year,
-                                                      surveys$month,
-                                                      surveys$day,
-                                                      sep = "-")))
+surveys <- readr::read_csv("data_raw/portal_data_joined.csv")
 ```
 
 ### Manipulating and analyzing data with dplyr
@@ -57,20 +53,6 @@ doing data analysis with some of the functions that come with R:
 3. Hidden arguments, having default operations that new learners are not aware
    of.
 
-We have seen in our previous lesson that when building or importing a data frame, the columns that contain characters (i.e., text) are coerced (=converted) into the `factor` data type. We had to set **`stringsAsFactors`** to **`FALSE`** to avoid this hidden argument to convert our data type. 
-
-This time we will use the **`tidyverse`** package to read the data and avoid having to set **`stringsAsFactors`** to **`FALSE`**
-
-If we haven't already done so, we can type `install.packages("tidyverse")` straight into the console. In fact, it's better to write this in the console than in our script for any package, as there's no need to re-install packages every time we run the script.
-
-Then, to load the package type:
-
-
-```{r, message = FALSE, purl = FALSE}
-## load the tidyverse packages, incl. dplyr
-library(tidyverse)
-```
-
 ## What are **`dplyr`** and **`tidyr`**?
 
 The package **`dplyr`** provides easy tools for the most common data manipulation
@@ -92,36 +74,9 @@ The package **`tidyr`** addresses the common problem of wanting to reshape your 
 To learn more about **`dplyr`** and **`tidyr`** after the workshop, you may want to check out this
 [handy data transformation with **`dplyr`** cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) and this [one about **`tidyr`**](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf).
 
-We'll read in our data using the `read_csv()` function, from the tidyverse package **`readr`**, instead of `read.csv()`.
-
-
-```{r, results = 'hide', purl = FALSE}
-surveys <- read_csv("data_raw/portal_data_joined.csv")
-```
-
-You will see the message `Parsed with column specification`, followed by each column name and its data type.
-When you execute `read_csv` on a data file, it looks through the first 1000 rows of each column and
-guesses the data type for each column as it reads it into R. For example, in this dataset, `read_csv`
-reads `weight` as `col_double` (a numeric data type), and `species` as `col_character`. You have the
-option to specify the data type for a column manually by using the `col_types` argument in `read_csv`.
-
-In RStudio's `Environment` pane, this `Data` object can now be inspected by
-clicking its name and the round `>` button left of it. The latter provides an
-overview of all columns/variables grouped by data type/class: `character` and
-`numeric`.
-
-Using those columns, we're going to learn some common **`dplyr`** functions:
-
-- `select()`: subset columns
-- `filter()`: subset rows on conditions
-- `mutate()`: create new columns by using information from other columns
-- `group_by()` and `summarize()`: create summary statistics on grouped data
-- `arrange()`: sort results
-- `count()`: count discrete values
-
 ## Selecting columns and filtering rows
 
-To select columns of a data frame, use `select()`. The first argument
+To select columns of our `surveys` data frame, use `select()`. The first argument
 to this function is the data frame (`surveys`), and the subsequent
 arguments are the columns to keep.
 
