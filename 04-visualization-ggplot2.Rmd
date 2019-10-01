@@ -5,7 +5,7 @@ minutes: 60
 ---
 
 
-```{r setup, echo=FALSE, purl=FALSE}
+```{r setup, echo=FALSE, warning=FALSE, purl=FALSE}
 source("setup.R")
 ```
 
@@ -28,14 +28,14 @@ source("setup.R")
 
 We start by loading the required packages. **`ggplot2`** is included in the **`tidyverse`** package.
 
-```{r load-package, message=FALSE, purl=FALSE}
+```{r load-package, message=FALSE, warning=FALSE, purl=FALSE}
 library(tidyverse)
 ```
 
 If not still in the workspace, load the data we saved in the previous lesson.
 
 
-```{r load-data, eval=TRUE, purl=FALSE}
+```{r load-data, message=FALSE, purl=FALSE}
 surveys_complete <- read_csv("data/surveys_complete.csv")
 ```
 

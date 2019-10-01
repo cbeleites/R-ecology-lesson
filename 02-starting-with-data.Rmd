@@ -4,7 +4,7 @@ author: "Data Carpentry contributors"
 minutes: 20
 ---
 
-```{r, echo=FALSE, purl=FALSE, message = FALSE}
+```{r, include=FALSE, purl=FALSE}
 source("setup.R")
 ```
 
@@ -68,14 +68,14 @@ If we haven't already done so, we can type `install.packages("tidyverse")` strai
 
 Then, to load the package type:
 
-```{r, message = FALSE, purl = FALSE}
+```{r, message = FALSE, warning = FALSE, purl = FALSE}
 ## load the tidyverse packages
 library(tidyverse)
 ```
 
 You are now ready to load the data:
 
-```{r, results = 'hide', purl = FALSE}
+```{r, results = 'hide', message = FALSE, purl = FALSE}
 surveys <- read_csv("data_raw/portal_data_joined.csv")
 ```
 
