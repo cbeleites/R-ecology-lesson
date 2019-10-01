@@ -102,7 +102,7 @@ weight_kg          # and so does typing the name of the object
 ```
 
 Now that R has `weight_kg` in memory, we can do arithmetic with it. For
-instance, we may want to convert this weight into pounds (weight in pounds is 2.2 times the weight in kg):
+instance, we may want to convert this weight into pounds:
 
 ```{r, purl = FALSE}
 2.2 * weight_kg
@@ -260,15 +260,13 @@ the `c()` function. For example we can create a vector of animal weights and ass
 it to a new object `weight_g`:
 
 ```{r, purl = FALSE}
-weight_g <- c(50, 60, 65, 82)
-weight_g
+(weight_g <- c(50, 60, 65, 82))
 ```
 
 A vector can also contain characters:
 
 ```{r, purl = FALSE}
-animals <- c("mouse", "rat", "dog")
-animals
+(animals <- c("mouse", "rat", "dog"))
 ```
 
 The quotes around "mouse", "rat", etc. are essential here. Without the quotes R
