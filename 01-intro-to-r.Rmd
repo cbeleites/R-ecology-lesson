@@ -232,12 +232,6 @@ don't have to name them:
 round(3.14159, 2)
 ```
 
-And if you do name the arguments, you can switch their order:
-
-```{r, results = 'show', purl = FALSE}
-round(digits = 2, x = 3.14159)
-```
-
 It's good practice to put the non-optional arguments (like the number you're
 rounding) first in your function call, and to then specify the names of all optional
 arguments.  If you don't, someone reading your code might have to look up the
