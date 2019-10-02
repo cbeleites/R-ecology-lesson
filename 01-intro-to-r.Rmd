@@ -523,20 +523,14 @@ max(heights, na.rm = TRUE)
 ```
 
 If your data include missing values, you may want to become familiar with the
-functions `is.na()`, `na.omit()`, and `complete.cases()`. See below for
-examples.
+functions `is.na()`, esp. its negation `!is.na()`:
 
 
 ```{r, purl = FALSE}
 ## Extract those elements which are not missing values.
 heights[!is.na(heights)]
-
-## Returns the object with incomplete cases removed. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
-na.omit(heights)
-
-## Extract those elements which are complete cases. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
-heights[complete.cases(heights)]
 ```
+
 Recall that you can use the `typeof()` function to find the type of your atomic vector.
 
 > ### Challenge
@@ -555,10 +549,6 @@ Recall that you can use the `typeof()` function to find the type of your atomic 
 > 
 > # 1.
 > heights_no_na <- heights[!is.na(heights)] 
-> # or
-> heights_no_na <- na.omit(heights)
-> # or
-> heights_no_na <- heights[complete.cases(heights)]
 >
 > # 2.
 > median(heights, na.rm = TRUE)
