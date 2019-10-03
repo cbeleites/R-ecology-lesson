@@ -219,6 +219,4 @@ extract some specific column we can do:
 surveys$species_id
 ```
 
-RStudio conveniently supports this `$`-notation by autocompletion, which is the
-reason why column names should not contain spaces. If you have a dataset that
-does, use `dataset[["column name"]]`.
+RStudio conveniently supports this `$`-notation by autocompletion. If the column name contains spaces, it will enclose it by backticks.
